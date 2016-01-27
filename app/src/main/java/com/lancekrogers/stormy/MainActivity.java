@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity
 
     private Location mLastLocation;
 
+    @Bind(R.id.locationLabel)
+    TextView mLocationLabel;
+
 
     // Google client to interact with Google API
     private GoogleApiClient mGoogleApiClient;

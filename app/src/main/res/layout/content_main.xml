@@ -40,23 +40,21 @@
         android:layout_height="wrap_content"
         android:text="6:00 PM"
         android:id="@+id/timeLabel"
-        android:layout_above="@+id/degreeImageView"
         android:layout_centerHorizontal="true"
         android:textColor="#80ffffff"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:layout_below="@+id/locationLabel"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Greenville, SC"
         android:id="@+id/locationLabel"
-        android:layout_above="@+id/timeLabel"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
         android:textColor="#ffffff"
         android:textSize="24sp"
         android:singleLine="true"
-        />
+        android:layout_below="@+id/refreshImageView"/>
 
     <ImageView
         android:layout_width="wrap_content"
