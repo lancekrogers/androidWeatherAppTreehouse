@@ -22,7 +22,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
-        android:text="100"
+        android:text="--"
         android:textSize="150sp"/>
 
     <ImageView
@@ -48,14 +48,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alcaltraz Island, CA"
+        android:text="Greenville, SC"
         android:id="@+id/locationLabel"
         android:layout_above="@+id/timeLabel"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
         android:textColor="#ffffff"
         android:textSize="24sp"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -95,7 +96,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0.88"
+                android:text="--"
                 android:id="@+id/humidityValue"
                 android:textSize="24sp"
                 android:textColor="#ffffff"
@@ -120,8 +121,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10%"
-                android:id="@+id/textView2"
+                android:text="--"
+                android:id="@+id/precipValue"
                 android:textColor="#ffffffff"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"/>
@@ -132,14 +133,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Slightly Stormy"
-        android:id="@+id/textView"
+        android:text="----------------"
+        android:id="@+id/summaryLabel"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textColor="#ffffffff"
         android:gravity="center_horizontal"
         android:textSize="18dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refreshImageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/refresh"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/refreshImageView"/>
 
 
 </RelativeLayout>
