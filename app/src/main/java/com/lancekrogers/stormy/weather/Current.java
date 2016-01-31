@@ -1,5 +1,7 @@
-package com.lancekrogers.stormy;
+package com.lancekrogers.stormy.weather;
 
+
+import com.lancekrogers.stormy.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,7 +10,7 @@ import java.util.TimeZone;
 /**
  * Created by lancerogers on 1/15/16.
  */
-public class CurrentWeather {
+public class Current {
     private String mIcon;
     private long mTime;
     private double mTemperature;

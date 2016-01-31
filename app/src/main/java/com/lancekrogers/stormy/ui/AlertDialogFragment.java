@@ -1,10 +1,12 @@
-package com.lancekrogers.stormy;
+package com.lancekrogers.stormy.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+
+import com.lancekrogers.stormy.R;
 
 /**
  * Created by lancerogers on 1/12/16.
