@@ -1,5 +1,8 @@
 package com.lancekrogers.stormy.weather;
 
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+
 /**
  * Created by lancerogers on 1/30/16.
  */
@@ -34,8 +37,8 @@ public class Daily {
         mIcon = icon;
     }
 
-    public double getTemperatureMax() {
-        return mTemperatureMax;
+    public int getTemperatureMax() {
+        return (int)Math.round(mTemperatureMax);
     }
 
     public void setTemperatureMax(double temperatureMax) {
@@ -48,5 +51,15 @@ public class Daily {
 
     public void setTimezone(String timezone) {
         mTimezone = timezone;
+    }
+
+    public int getIconId(){
+        return Forecast.getIconId(mIcon);
+    }
+    public String getDayOfTheWeek(){
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        formatter.setTimeZone(TimeZone.getTimeZone(mTimezone));
+        Date datetime = new Date(mTime * 1000);
+        return formatter.format(datetime);
     }
 }
