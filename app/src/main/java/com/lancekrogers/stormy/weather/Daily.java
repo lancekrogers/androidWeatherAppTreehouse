@@ -56,6 +56,7 @@ public class Daily {
     public int getIconId(){
         return Forecast.getIconId(mIcon);
     }
+
     public String getDayOfTheWeek(){
         SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
         formatter.setTimeZone(TimeZone.getTimeZone(mTimezone));

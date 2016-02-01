@@ -13,17 +13,14 @@ import com.lancekrogers.stormy.R;
 
 public class DailyForcastActivity extends ListActivity {
 
+    private Daily[] mDays;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_forcast);
 
-        String[] daysOfTheWeek = {"Sunday", "Monday", "Tuesday", "Wednesday",
-                                    "Thursday", "Friday", "Saturday"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, daysOfTheWeek);
-
-        setListAdapter(adapter);
+        DailyAdapter dayAdapter = new DailyAdapter(this, mDays);
 
     }
 
