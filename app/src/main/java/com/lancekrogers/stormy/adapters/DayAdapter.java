@@ -1,6 +1,7 @@
 package com.lancekrogers.stormy.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,22 +46,26 @@ public class DayAdapter extends BaseAdapter {
 
         if (convertView == null) {
             // brand new
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item, parent, false);
             holder = new ViewHolder();
             holder.iconImageView = (ImageView) convertView.findViewById(R.id.iconImageView);
             holder.temperatureLabel = (TextView) convertView.findViewById(R.id.temperatureLabel);
-            holder.dayLabel = (TextView) convertView.findViewById(R.id.dayNameLabel);
-
+            holder.dayLabel = (TextView) convertView.findViewById(R.id.dayNam
             convertView.setTag(holder);
         }
         else {
+
             holder = (ViewHolder) convertView.getTag();
         }
-
         Daily day = mDailys[position];
         holder.iconImageView.setImageResource(day.getIconId());
         holder.temperatureLabel.setText(day.getTemperatureMax() + "");
-        holder.dayLabel.setText(day.getDayOfTheWeek());
+        //holder.dayLabel.setText(day.getDayOfTheWeek());
+        if (position == 0) {
+            holder.dayLabel.setText("Today");
+        } else {
+            holder.dayLabel.setText(day.getDayOfTheWeek());
+        }
         return convertView;
     }
 

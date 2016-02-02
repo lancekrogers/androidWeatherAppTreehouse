@@ -1,12 +1,16 @@
 package com.lancekrogers.stormy.weather;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.TimeZone;
 
 /**
  * Created by lancerogers on 1/30/16.
  */
-public class Daily {
+public class Daily implements Parcelable {
     private long mTime;
     private String mSummary;
     private String mIcon;
@@ -63,4 +67,43 @@ public class Daily {
         Date datetime = new Date(mTime * 1000);
         return formatter.format(datetime);
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(mTime);
+        dest.writeString(mSummary);
+        dest.writeDouble(mTemperatureMax);
+        dest.writeString(mIcon);
+        dest.writeString(mTimezone);
+
+    }
+
+    private Daily(Parcel in) {
+        mTime = in.readLong();
+        mSummary = in.readString();
+        mTemperatureMax= in.readDouble();
+        mIcon = in.readString();
+        mTimezone = in.readString();
+    }
+
+    public Daily(){
+
+    }
+
+    public static final Creator<Daily> CREATOR = new Creator<Daily>() {
+        @Override
+        public Daily createFromParcel(Parcel source) {
+            return new Daily(source);
+        }
+
+        @Override
+        public Daily[] newArray(int size) {
+            return new Daily[size];
+        }
+    };
 }
