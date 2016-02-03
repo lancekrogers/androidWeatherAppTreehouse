@@ -49,8 +49,8 @@ public class DayAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item, parent, false);
             holder = new ViewHolder();
             holder.iconImageView = (ImageView) convertView.findViewById(R.id.iconImageView);
-            holder.temperatureLabel = (TextView) convertView.findViewById(R.id.temperatureLabel);
-            holder.dayLabel = (TextView) convertView.findViewById(R.id.dayNam
+            holder.temperatureText = (TextView) convertView.findViewById(R.id.temperatureText);
+            holder.dayLabel = (TextView) convertView.findViewById(R.id.dayNameLabel);
             convertView.setTag(holder);
         }
         else {
@@ -58,20 +58,23 @@ public class DayAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         Daily day = mDailys[position];
+
         holder.iconImageView.setImageResource(day.getIconId());
-        holder.temperatureLabel.setText(day.getTemperatureMax() + "");
-        //holder.dayLabel.setText(day.getDayOfTheWeek());
-        if (position == 0) {
-            holder.dayLabel.setText("Today");
-        } else {
-            holder.dayLabel.setText(day.getDayOfTheWeek());
-        }
+        holder.temperatureText.setText(day.getTemperatureMax() + "");
+        Log.e("HEY", " " + position);
+        holder.dayLabel.setText(day.getDayOfTheWeek());
+        Log.v("hey", day.getDayOfTheWeek());
+        //if (position == 0) {
+          //  holder.dayLabel.setText("Today");
+       // } else {
+          //  holder.dayLabel.setText(day.getDayOfTheWeek());
+        //}
         return convertView;
     }
 
     private static class ViewHolder {
         ImageView iconImageView; // public by default
-        TextView temperatureLabel;
+        TextView temperatureText;
         TextView dayLabel;
     }
 }

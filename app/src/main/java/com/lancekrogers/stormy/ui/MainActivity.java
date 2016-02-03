@@ -358,8 +358,8 @@ public class MainActivity extends AppCompatActivity
                 .isGooglePlayServicesAvailable(this);
         if (resultCode != ConnectionResult.SUCCESS) {
             if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+              //  GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+                //        PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {
                 Toast.makeText(getApplicationContext(),
                         "This device is not supported.", Toast.LENGTH_LONG)
