@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity
             hour.setTemperature(jsonHour.getDouble("temperature"));
             hour.setIcon(jsonHour.getString("icon"));
             hour.setTime(jsonHour.getLong("time"));
-            hour.setTimeZone(timezone);
+            hour.setTimezone(timezone);
             hours[i] = hour;
         }
         return hours;
