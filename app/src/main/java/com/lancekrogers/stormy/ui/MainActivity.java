@@ -146,9 +146,6 @@ public class MainActivity extends AppCompatActivity
         */
 
 
-
-
-
         mRefreshImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -428,7 +425,7 @@ public class MainActivity extends AppCompatActivity
     }
     @OnClick (R.id.hourlyButton)
     public void startHourlyActivity(View view) {
-        Intent intent = new Intent(this, DailyForcastActivity.class);
+        Intent intent = new Intent(this, HourlyForecastActivity.class);
         intent.putExtra(HOURLY_FORECAST, mForecast.getHourlyForecast());
         startActivity(intent);
     }

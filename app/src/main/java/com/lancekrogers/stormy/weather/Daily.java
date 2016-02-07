@@ -17,6 +17,11 @@ public class Daily implements Parcelable {
     private double mTemperatureMax;
     private String mTimezone;
 
+
+    public Daily(){
+
+    }
+
     public long getTime() {
         return mTime;
     }
@@ -91,9 +96,6 @@ public class Daily implements Parcelable {
         mTimezone = in.readString();
     }
 
-    public Daily(){
-
-    }
 
     public static final Creator<Daily> CREATOR = new Creator<Daily>() {
         @Override
