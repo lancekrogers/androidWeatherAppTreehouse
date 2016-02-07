@@ -64,11 +64,11 @@ public class DayAdapter extends BaseAdapter {
         Log.e("HEY", " " + position);
         holder.dayLabel.setText(day.getDayOfTheWeek());
         Log.v("hey", day.getDayOfTheWeek());
-        //if (position == 0) {
-          //  holder.dayLabel.setText("Today");
-       // } else {
-          //  holder.dayLabel.setText(day.getDayOfTheWeek());
-        //}
+        if (position == 0) {
+            holder.dayLabel.setText("Today");
+        } else {
+            holder.dayLabel.setText(day.getDayOfTheWeek());
+        }
         return convertView;
     }
 
